@@ -1,0 +1,16 @@
+[package]
+name = "esp32"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+panic-halt = "0.2.0"
+esp32-hal = { version = "0.3.0", features = ["all_in_ram"] }
+xtensa-lx = { version = "0.4.0", features = ["lx6"] }
+
+[profile.release]
+lto = true
+incremental = false
+debug = false
+codegen-units = 1
+
